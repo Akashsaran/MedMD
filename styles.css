@@ -180,13 +180,15 @@ nav ul li a:hover {
     }
 
     .team-container,
-    .program-container {
+    .program-container,
+    .indiv-program-container {
         flex-direction: column;
         align-items: center;
     }
 
     .team-box,
-    .program-box {
+    .program-box,
+    .indiv-program-box {
         width: 90%;
         flex-direction: column;
         text-align: center;
@@ -241,7 +243,7 @@ nav ul li a:hover {
     opacity: 0;
 }
 
-/* Becomes visible when fully on screen */
+/* visible when fully on screen */
 .fade-in.active {
     animation: fadeIn 1s ease-out forwards;
 }
@@ -256,16 +258,16 @@ nav ul li a:hover {
 
 
 .text-container {
-    margin-top: 30px;  /* Space below the navbar */
-    margin-left: 200px; /* Left margin */
-    margin-right: 200px; /* Right margin */
+    margin-top: 30px; 
+    margin-left: 200px; 
+    margin-right: 200px;
     padding: 20px;
     background-color: white;
     /*border: 2px solid #354066; */
     border-radius: 10px;
     width: calc(100% - 400px); 
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .fade-in-text {
@@ -342,7 +344,7 @@ nav ul li a:hover {
     overflow: hidden;
     background-color: #D7E3ED;
     flex-shrink: 0;
-    transition: filter 0.3s ease-in-out; /* Smooth transition for filter change */
+    transition: filter 0.3s ease-in-out;
 }
 
 .team-image img {
@@ -351,7 +353,6 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-/* Vertical line between text */
 .team-info {
     flex-grow: 1;
     display: flex;
@@ -413,7 +414,6 @@ nav ul li a:hover {
     margin-top: auto; 
 }
 
-/* Add Arrow */
 .contact-btn::after {
     font-weight: bold;
     transition: 0.3s;
@@ -467,7 +467,7 @@ nav ul li a:hover {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #354066; /* Solid purple */
+    background-color: #354066;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -492,7 +492,7 @@ nav ul li a:hover {
 }
 
 .program-section {
-    margin-left: 16.5%;
+    margin-left: 17%;
 }
 
 .program-container {
@@ -590,9 +590,9 @@ nav ul li a:hover {
     font-weight: 400;
     color: #807c7c;
     line-height: 1.5;
-    list-style-type: none; /* Remove default bullets */
+    list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 5px 0px; 
     
 }
@@ -618,7 +618,9 @@ nav ul li a:hover {
     padding: 0;
     width: 15%;
     position: fixed;
-    height: 85%;
+    top: calc(74px + 2svw);
+    left: 2svw;
+    height: calc(100svh - 74px - 4svw);
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -627,8 +629,6 @@ nav ul li a:hover {
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-    margin-left: 1.5%;
-    margin-top: 15px;
     color: #807c7c;
 }
 
@@ -644,7 +644,7 @@ nav ul li a:hover {
 }
 
 .sidebar ul li {
-    font-size: 14px;
+    font-size: 15px;
     padding: 6px 0;
     position: relative;
     
@@ -662,35 +662,167 @@ nav ul li a:hover {
 }
 
 .sidebar p {
-    font-size: 16px;
+    font-size: 17px;
     padding: 8px 0;
     position: relative;
     color: #354066;
     font-weight: 600;
 }
 
+.sidebar .current {
+    color: #354066;
+    font-weight: 600;
+}
+
 .sidebar a {
-    text-decoration: none; /* Remove underline */
-    color: #807c7c; /* Set the color to gray */
+    text-decoration: none; 
+    color: #807c7c; 
 }
 
 .sidebar a:hover {
-    color: #354066; /* Optional: Change color on hover */
+    color: #354066;
 }
 
-/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
 .sidebar::-webkit-scrollbar {
-    width: 4px; /* Width of the scrollbar */
+    display: none;
+    width: 4px; 
 }
 
-/* Track */
-.sidebar::-webkit-scrollbar-track {
-    border-radius: 10px; /* Rounded corners for the track */
-    margin-top: 10px;
+.indiv-program-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 6.5px;
 }
 
-/* Handle */
-.sidebar::-webkit-scrollbar-thumb {
-    background: #807c7c86; /* Blue color for the scrollbar handle */
-    border-radius: 10px; /* Rounded corners for the handle */
+.indiv-program-description-box {
+    display: flex;
+    width: calc(95% - 15px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-height: 200px;
+    transition: transform 0.1s ease-in-out;
 }
+
+.indiv-program-sessions-box {
+    display: flex;
+    width: calc(95% - 15px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-height: 200px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.indiv-program-header {
+    display: flex;
+    align-items: top;
+    gap: 15px;
+    width: 100%;
+}
+
+.indiv-program-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: top;
+    flex-direction: column;
+    position: relative;
+    padding-left: 20px;
+}
+
+.indiv-program-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #354066;
+    margin-bottom: 12px;
+}
+
+.indiv-program-info h4 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #354066;
+    margin: 8px 0;
+}
+
+.indiv-program-info p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #807c7c;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    /* animation: fadeIn 1s ease-out forwards; */
+}
+
+.indiv-program-info table{
+    border-collapse: separate; 
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.indiv-program-info table tr {
+    margin: 15px;
+    height: 60px;
+}
+
+.indiv-program-info table tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+.indiv-program-info table tr:nth-child(odd) {
+    background-color: #edf7f7;
+}
+
+
+.indiv-program-info table th {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #354066;
+    color: white;
+    padding: 10px
+}
+
+.indiv-program-info table td {
+    font-size: 16px;
+    font-weight: 400;
+    color: #807c7c;
+    line-height: 1.5;
+    padding: 10px
+}
+
+.indiv-program-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    align-self: center;
+    overflow: hidden;
+    background-color: #D7E3ED;
+    flex-shrink: 0;
+}
+
+.indiv-program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.indiv-program-info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1%;
+    bottom: 1%;
+    width: 2px;
+    border-radius: 15px;
+    background: #d7e3ed;
+}
+
+
+

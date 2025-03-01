@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const elements = document.querySelectorAll(".team-info p, .team-info h3, .team-info h4, .team-image, .program-image, .program-info p, .program-info h3, .program-info h4, .program-info ul");
+    const elements = document.querySelectorAll(".team-info p, .team-info h3, .team-info h4, .team-image, .program-image, .program-info p, .program-info h3, .program-info h4, .program-info ul, .indiv-program-image, .indiv-program-info h3, .indiv-program-info p, .indiv-program-info table");
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.5 });
 
     elements.forEach(el => {
-        el.classList.add(el.classList.contains("team-image") ? "fade-in-small" : "fade-in");
+        el.classList.add(el.classList.contains("team-image") || el.classList.contains("indiv-program-image") ? "fade-in-small" : "fade-in");
         observer.observe(el);
     });
 
